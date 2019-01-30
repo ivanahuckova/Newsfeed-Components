@@ -18,6 +18,11 @@ class Article {
 			articles[i].classList.remove("article-open");
 		}
 		this.domElement.classList.toggle("article-open");
+		// if (this.domElement.classList.contains("article-open")) {
+		// 	this.expandButton.textContent = "shrink";
+		// } else {
+		// 	this.expandButton.textContent = "expand";
+		// }
 	}
 }
 //<====>
