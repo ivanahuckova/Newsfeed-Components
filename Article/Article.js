@@ -13,16 +13,20 @@ class Article {
 	}
 
 	expandArticle() {
-		// Using our reference to the domElement, toggle a class to expand or hide the article.
-		for (let i = 0; i < articles.length; i++) {
-			articles[i].classList.remove("article-open");
+		if (this.domElement.classList.contains("article-open")) {
+			this.expandButton.textContent = "expand";
+			this.domElement.classList.remove("article-open");
+		} else {
+			for (let i = 0; i < articles.length; i++) {
+				if (articles[i].classList.contains("article-open")) {
+					articles[i].classList.remove("article-open");
+					articles[i].querySelector(".expandButton").textContent = "expand";
+				}
+			}
+
+			this.domElement.classList.add("article-open");
+			this.expandButton.textContent = "close";
 		}
-		this.domElement.classList.toggle("article-open");
-		// if (this.domElement.classList.contains("article-open")) {
-		// 	this.expandButton.textContent = "shrink";
-		// } else {
-		// 	this.expandButton.textContent = "expand";
-		// }
 	}
 }
 //<====>
